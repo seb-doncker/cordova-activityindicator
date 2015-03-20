@@ -3,7 +3,7 @@ package org.apache.cordova.plugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
-import org.json.JSONException; 
+import org.json.JSONException;
 import org.apache.cordova.plugin.AndroidProgressHUD;
 
 public class ActivityIndicator extends CordovaPlugin {
@@ -36,6 +36,10 @@ public class ActivityIndicator extends CordovaPlugin {
 
 		cordova.getActivity().runOnUiThread(new Runnable() {
 			public void run() {
+				if (activityIndicator != null) {
+					activityIndicator.dismiss();
+					activityIndicator = null;
+				}
 				activityIndicator = AndroidProgressHUD.show(ActivityIndicator.this.cordova.getActivity(), ActivityIndicator.this.text, true,true,null);
 			}
 		});
