@@ -9,7 +9,6 @@ import org.apache.cordova.plugin.AndroidProgressHUD;
 public class ActivityIndicator extends CordovaPlugin {
 
 	private AndroidProgressHUD activityIndicator = null;
-	private String text = null;
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -31,15 +30,13 @@ public class ActivityIndicator extends CordovaPlugin {
 	 * This show the ProgressDialog
 	 * @param text - Message to display in the Progress Dialog
 	 */
-	public void show(String text) {
-		this.text = text;
-
+	public void show(final String text) {
 		cordova.getActivity().runOnUiThread(new Runnable() {
 			public void run() {
 				if (activityIndicator != null) {
 					activityIndicator.dismiss();
 				}
-				activityIndicator = AndroidProgressHUD.show(ActivityIndicator.this.cordova.getActivity(), ActivityIndicator.this.text, true, false, null);
+				activityIndicator = AndroidProgressHUD.show(ActivityIndicator.this.cordova.getActivity(), text, true, false, null);
 			}
 		});
 	}
@@ -48,9 +45,13 @@ public class ActivityIndicator extends CordovaPlugin {
 	 * This hide the ProgressDialog
 	 */
 	public void hide() {
-		if (activityIndicator != null) {
-			activityIndicator.dismiss();
-			activityIndicator = null;
-		}
+		cordova.getActivity().runOnUiThread(new Runnable() {
+			public void run() {
+				if (activityIndicator != null) {
+					activityIndicator.dismiss();
+					activityIndicator = null;
+				}
+			}
+		});
 	}
 }

@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="org.apache.cordova.plugin.ActivityIndicator"
-	version="1.0.0">
+	version="1.0.2">
 
 	<engines>
 		<engine name="cordova" version=">=3.0.0" />
@@ -42,7 +42,7 @@
 		<source-file src="src/android/AndroidProgressHUD.java" target-dir="src/org/apache/cordova/plugin" />
 		<source-file src="src/android/layout/progress_hud.xml" target-dir="res/layout"/>
 		<source-file src="src/android/anim/spinner.xml" target-dir="res/anim"/>
-		
+
 		<source-file src="src/android/drawable/progress_hud_bg.xml" target-dir="res/drawable"/>
 		<source-file src="src/android/drawable/spinner_0.png" target-dir="res/drawable"/>
 		<source-file src="src/android/drawable/spinner_1.png" target-dir="res/drawable"/>
@@ -56,7 +56,7 @@
 		<source-file src="src/android/drawable/spinner_9.png" target-dir="res/drawable"/>
 		<source-file src="src/android/drawable/spinner_10.png" target-dir="res/drawable"/>
 		<source-file src="src/android/drawable/spinner_11.png" target-dir="res/drawable"/>
-		
+
 		<source-file src="src/android/values/progress_hud_styles.xml" target-dir="res/values"/>
 	</platform>
 </plugin>
