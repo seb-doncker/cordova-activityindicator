@@ -7,9 +7,11 @@ if(cordova.platformId == "browser") {
     function centerAndShowIndicator() {
         setTimeout(function() {
             var frame = document.getElementsByClassName("CurrentPage")[0];
-            currentIndicator.style.left = Math.floor((frame.clientWidth - currentIndicator.clientWidth) / 2) + "px";
-            currentIndicator.style.top = Math.floor((frame.clientHeight - currentIndicator.clientHeight) / 2) + "px";
-            currentIndicator.style.visibility = "visible";
+			if(currentIndicator) {
+            	currentIndicator.style.left = Math.floor((frame.clientWidth - currentIndicator.clientWidth) / 2) + "px";
+            	currentIndicator.style.top = Math.floor((frame.clientHeight - currentIndicator.clientHeight) / 2) + "px";
+            	currentIndicator.style.visibility = "visible";
+			}
         }, 0);
     }
 
