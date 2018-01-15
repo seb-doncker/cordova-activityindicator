@@ -1,0 +1,34 @@
+{
+    "name": "cordova-activityindicator",
+    "cordova": {
+      "id": "cordova-activityindicator",
+      "platforms": [
+        "android",
+        "ios"
+      ]
+    },
+    "version": "1.0.2",
+    "description": "",
+    "main": "www/activityindicator.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/seb-doncker/cordova-activityindicator.git"
+    },
+    "keywords": [
+    ],
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "engines": [
+      {
+        "name": "cordova",
+        "version": ">=3.0.0"
+      }
+    ],
+    "author": "",
+    "license": "",
+  }
